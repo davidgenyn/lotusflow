@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
-<title>Lotusflow — Zichtbare websites en AI-automatisering voor zelfstandigen en KMO's</title>
+<title>Weblotus — Zichtbare websites en AI-automatisering voor zelfstandigen en KMO's</title>
 <style>
   :root {
     --nacht: #0d2340;
@@ -36,9 +36,9 @@
     position: fixed;
     top: 0; left: 0; right: 0;
     z-index: 10;
-    background: rgba(255, 255, 255, 0.97);
+    background: rgba(13, 35, 64, 0.96);
     backdrop-filter: blur(6px);
-    border-bottom: 1px solid var(--lijn);
+    border-bottom: 1px solid rgba(159, 195, 232, 0.15);
   }
   .nav-inner {
     max-width: 1020px;
@@ -54,28 +54,26 @@
     display: flex;
     align-items: center;
     gap: 0.6rem;
-    color: var(--inkt);
+    color: var(--wit);
     text-decoration: none;
     font-size: 1.15rem;
     letter-spacing: 0.04em;
   }
   .merk svg { width: 26px; height: 26px; }
   .merk { font-weight: 650; letter-spacing: 0.05em; }
-  .knop-nav { padding: 0.5rem 1.15rem; font-size: 0.92rem; }
-  .nav-links .knop-nav { color: var(--wit); }
-  .nav-links .knop-nav:hover, .nav-links .knop-nav:focus-visible { color: var(--wit); }
   .nav-links {
     display: flex;
-    gap: 1.6rem;
+    gap: 1.15rem;
     flex-wrap: wrap;
     align-items: center;
   }
   .nav-links a {
-    color: var(--tekst);
+    color: var(--lotus);
     text-decoration: none;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
   }
-  .nav-links a:hover, .nav-links a:focus-visible { color: var(--inkt); }
+  section, .dienst { scroll-margin-top: 95px; }
+  .nav-links a:hover, .nav-links a:focus-visible { color: var(--wit); }
   a:focus-visible {
     outline: 2px solid var(--lotus);
     outline-offset: 3px;
@@ -260,12 +258,15 @@
 
 <nav>
   <div class="nav-inner">
-    <a class="merk" href="#top">lotusflow</a>
+    <a class="merk" href="#top">weblotus</a>
     <div class="nav-links">
-      <a href="#diensten">Diensten</a>
+      <a href="#websites">Zichtbare websites</a>
+      <a href="#automatisering">AI-automatisering</a>
+      <a href="#google">Google &amp; e-marketing</a>
+      <a href="#onderhoud">Onderhoud &amp; ondersteuning</a>
       <a href="#werkwijze">Werkwijze</a>
       <a href="#over">Over</a>
-      <a class="knop knop-nav" href="#contact">Neem contact op</a>
+      <a href="#contact">Contact</a>
     </div>
   </div>
 </nav>
@@ -274,7 +275,7 @@
   <div class="hero-inner">
     <div class="hero-tekst">
       <h1>Zichtbare websites en AI-automatisering voor zelfstandigen en KMO's</h1>
-      <p class="hero-sub">Lotusflow bouwt uw website én neemt terugkerend werk uit handen — van facturen tot e-mailopvolging.</p>
+      <p class="hero-sub">Weblotus bouwt uw website én neemt terugkerend werk uit handen — van facturen tot e-mailopvolging.</p>
       <a class="knop" href="#contact">Neem contact op</a>
     </div>
     <div class="hero-lotus" aria-hidden="true">
@@ -287,21 +288,20 @@
 
 <section id="diensten">
   <div class="sectie-inner">
-    <h2 class="diensten-kop">Zichtbare websites · AI-automatisering · Google &amp; e-marketing · Onderhoud &amp; ondersteuning</h2>
     <div class="diensten-rij">
-      <div class="dienst">
+      <div class="dienst" id="websites">
         <h3>Zichtbare websites</h3>
         <p>Een moderne, snelle website die werkt op elk toestel — en die gevonden wordt in Google. Nieuw gebouwd of uw bestaande site vernieuwd: helder, aanpasbaar en met de mogelijkheid om uw site met AI up-to-date te houden.</p>
       </div>
-      <div class="dienst">
+      <div class="dienst" id="automatisering">
         <h3>AI-automatisering</h3>
-        <p>Terugkerende taken die stilletjes uw tijd opeten: facturen verwerken, e-mails sorteren en beantwoorden, klanten opvolgen, afspraken beheren. Lotusflow automatiseert ze — waar het loont met behulp van AI — zodat u zich met uw vak kunt bezighouden.</p>
+        <p>Terugkerende taken die stilletjes uw tijd opeten: facturen verwerken, e-mails sorteren en beantwoorden, klanten opvolgen, afspraken beheren. Weblotus automatiseert ze — waar het loont met behulp van AI — zodat u zich met uw vak kunt bezighouden.</p>
       </div>
-      <div class="dienst">
+      <div class="dienst" id="google">
         <h3>Google &amp; e-marketing</h3>
         <p>Waarom leveren de meeste websites niet op wat ze kosten? Omdat niemand ze vindt. Wij zorgen dat u wél gevonden wordt: met SEO (vindbaar in Google), GEO (vindbaar in AI-assistenten zoals ChatGPT), een correct ingericht Google Business-profiel, en e-marketing die grotendeels vanzelf loopt — nieuwsbrieven, klantopvolging en reviewverzoeken, één keer opgezet en daarna automatisch.</p>
       </div>
-      <div class="dienst">
+      <div class="dienst" id="onderhoud">
         <h3>Onderhoud &amp; ondersteuning</h3>
         <p>Uw website en e-mail hebben zorg nodig: updates, back-ups, een veilige e-mailconfiguratie en een aanspreekpunt als er iets hapert. Wij houden alles draaiend, zodat u er niet naar hoeft om te kijken.</p>
       </div>
@@ -336,8 +336,8 @@
 
 <section id="over">
   <div class="sectie-inner">
-    <h2>Over Lotusflow</h2>
-    <p>Lotusflow combineert jarenlange IT-ervaring bij grote bedrijven met een aanpak op maat van kleine ondernemingen: nuchter, betrouwbaar en zonder jargon. Volledig op afstand, voor klanten in België en Nederland.</p>
+    <h2>Over Weblotus</h2>
+    <p>Weblotus combineert jarenlange IT-ervaring bij grote bedrijven met een aanpak op maat van kleine ondernemingen: nuchter, betrouwbaar en zonder jargon. Volledig op afstand, voor klanten in België en Nederland.</p>
   </div>
 </section>
 
@@ -345,14 +345,14 @@
   <div class="sectie-inner">
     <h2>Contact</h2>
     <p>Vragen of een project in gedachten? Mail ons — u krijgt snel antwoord.</p>
-    <a class="mail-groot" href="mailto:info@lotusflow.net">info@lotusflow.net</a>
+    <a class="mail-groot" href="mailto:info@weblotus.be">info@weblotus.be</a>
   </div>
 </section>
 
 <footer>
   <div class="voet-inner">
-    <span>Lotusflow — België &amp; Nederland</span>
-    <a href="mailto:info@lotusflow.net">info@lotusflow.net</a>
+    <span>Weblotus — België &amp; Nederland</span>
+    <a href="mailto:info@weblotus.be">info@weblotus.be</a>
   </div>
 </footer>
 
