@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Lotusflow — Zichtbare websites en AI-automatisering voor zelfstandigen en KMO's</title>
+<style>
+  :root {
+    --nacht: #0d2340;
+    --nacht-diep: #081729;
+    --inkt: #1e2d3d;
+    --tekst: #3a4a5c;
+    --licht: #f4f8fb;
+    --wit: #ffffff;
+    --accent: #2e6da4;
+    --accent-donker: #245680;
+    --lijn: #dbe6f0;
+    --lotus: #9fc3e8;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+    color: var(--tekst);
+    background: var(--wit);
+    line-height: 1.65;
+    font-size: 17px;
+  }
+
+  /* ---------- Navigatie ---------- */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.97);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--lijn);
+  }
+  .nav-inner {
+    max-width: 1020px;
+    margin: 0 auto;
+    padding: 0.85rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .merk {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: var(--inkt);
+    text-decoration: none;
+    font-size: 1.15rem;
+    letter-spacing: 0.04em;
+  }
+  .merk svg { width: 26px; height: 26px; }
+  .merk { font-weight: 650; letter-spacing: 0.05em; }
+  .knop-nav { padding: 0.5rem 1.15rem; font-size: 0.92rem; }
+  .nav-links .knop-nav { color: var(--wit); }
+  .nav-links .knop-nav:hover, .nav-links .knop-nav:focus-visible { color: var(--wit); }
+  .nav-links {
+    display: flex;
+    gap: 1.6rem;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .nav-links a {
+    color: var(--tekst);
+    text-decoration: none;
+    font-size: 0.95rem;
+  }
+  .nav-links a:hover, .nav-links a:focus-visible { color: var(--inkt); }
+  a:focus-visible {
+    outline: 2px solid var(--lotus);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  /* ---------- Hero ---------- */
+  header {
+    background: linear-gradient(165deg, var(--nacht) 0%, var(--nacht-diep) 70%);
+    color: var(--wit);
+    padding: 9.5rem 1.5rem 5.5rem;
+  }
+  .hero-inner {
+    max-width: 1020px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 3.5rem;
+  }
+  .hero-tekst { flex: 1 1 55%; }
+  .hero-lotus {
+    flex: 0 1 34%;
+    display: flex;
+    justify-content: center;
+  }
+  .hero-lotus svg {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+  }
+  .lotus-lijn {
+    fill: none;
+    stroke: var(--lotus);
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .lotus-lijn {
+      stroke-dasharray: 600;
+      stroke-dashoffset: 600;
+      animation: teken 2.4s ease-out forwards;
+    }
+    @keyframes teken { to { stroke-dashoffset: 0; } }
+  }
+  h1 {
+    font-size: clamp(1.9rem, 4.2vw, 2.9rem);
+    font-weight: 350;
+    line-height: 1.22;
+    letter-spacing: 0.01em;
+    margin-bottom: 1.3rem;
+  }
+  .hero-sub {
+    font-size: 1.12rem;
+    color: #c3d6ea;
+    max-width: 34em;
+    margin-bottom: 2.2rem;
+  }
+  .knop {
+    display: inline-block;
+    background: var(--accent);
+    color: var(--wit);
+    text-decoration: none;
+    padding: 0.85rem 1.9rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    letter-spacing: 0.02em;
+  }
+  .knop:hover, .knop:focus-visible { background: var(--accent-donker); }
+
+  /* ---------- Secties algemeen ---------- */
+  section { padding: 4.5rem 1.5rem; }
+  .sectie-inner { max-width: 1020px; margin: 0 auto; }
+  h2 {
+    font-size: 1.75rem;
+    font-weight: 450;
+    color: var(--inkt);
+    margin-bottom: 0.6rem;
+    letter-spacing: 0.01em;
+  }
+  .sectie-intro {
+    max-width: 40em;
+    margin-bottom: 2.6rem;
+  }
+
+  /* ---------- Diensten ---------- */
+  #diensten { background: var(--licht); }
+  .diensten-kop {
+    font-size: 1.35rem;
+    font-weight: 500;
+    line-height: 1.5;
+    margin-bottom: 2.4rem;
+  }
+  .diensten-rij {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 2.5rem;
+  }
+  .dienst { border-top: 3px solid var(--accent); padding-top: 1.3rem; }
+  .dienst h3 {
+    font-size: 1.2rem;
+    font-weight: 550;
+    color: var(--inkt);
+    margin-bottom: 0.55rem;
+  }
+  .dienst p { font-size: 0.99rem; }
+
+  /* ---------- Werkwijze ---------- */
+  .stappen { list-style: none; max-width: 42em; }
+  .stappen li {
+    display: flex;
+    gap: 1.2rem;
+    padding: 1.15rem 0;
+    border-bottom: 1px solid var(--lijn);
+  }
+  .stappen li:last-child { border-bottom: none; }
+  .stap-nr {
+    flex: 0 0 2.1rem;
+    height: 2.1rem;
+    border: 1.5px solid var(--accent);
+    border-radius: 50%;
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.95rem;
+    margin-top: 0.15rem;
+  }
+  .stap-tekst strong {
+    display: block;
+    color: var(--inkt);
+    font-weight: 550;
+    margin-bottom: 0.15rem;
+  }
+  .stap-tekst p { font-size: 0.98rem; }
+
+  /* ---------- Over ---------- */
+  #over { background: var(--licht); }
+  #over p { max-width: 42em; }
+
+  /* ---------- Contact ---------- */
+  #contact { text-align: left; }
+  #contact p { max-width: 40em; margin-bottom: 1.8rem; }
+  .mail-groot {
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 1.15rem;
+    border-bottom: 1px solid var(--accent);
+    padding-bottom: 1px;
+  }
+  .mail-groot:hover { color: var(--accent-donker); border-color: var(--accent-donker); }
+
+  /* ---------- Voettekst ---------- */
+  footer {
+    background: var(--nacht-diep);
+    color: #8fa8c2;
+    padding: 2.2rem 1.5rem;
+    font-size: 0.92rem;
+  }
+  .voet-inner {
+    max-width: 1020px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  footer a { color: var(--lotus); text-decoration: none; }
+  footer a:hover { color: var(--wit); }
+
+  /* ---------- Mobiel ---------- */
+  @media (max-width: 720px) {
+    header { padding-top: 8.5rem; }
+    .hero-inner { flex-direction: column-reverse; gap: 2rem; text-align: left; }
+    .hero-lotus svg { max-width: 180px; }
+    section { padding: 3.2rem 1.25rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="merk" href="#top">lotusflow</a>
+    <div class="nav-links">
+      <a href="#diensten">Diensten</a>
+      <a href="#werkwijze">Werkwijze</a>
+      <a href="#over">Over</a>
+      <a class="knop knop-nav" href="#contact">Neem contact op</a>
+    </div>
+  </div>
+</nav>
+
+<header id="top">
+  <div class="hero-inner">
+    <div class="hero-tekst">
+      <h1>Zichtbare websites en AI-automatisering voor zelfstandigen en KMO's</h1>
+      <p class="hero-sub">Lotusflow bouwt uw website én neemt terugkerend werk uit handen — van facturen tot e-mailopvolging.</p>
+      <a class="knop" href="#contact">Neem contact op</a>
+    </div>
+    <div class="hero-lotus" aria-hidden="true">
+      <svg viewBox="0 0 100 100">
+        <path class="lotus-lijn" d="M50 78 C38 68 30 54 33 40 C40 46 46 54 50 64 C54 54 60 46 67 40 C70 54 62 68 50 78 Z M50 64 C48 48 48 34 50 22 C52 34 52 48 50 64 Z M33 40 C24 44 17 52 14 62 C24 64 34 60 42 52 M67 40 C76 44 83 52 86 62 C76 64 66 60 58 52"/>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<section id="diensten">
+  <div class="sectie-inner">
+    <h2 class="diensten-kop">Zichtbare websites · AI-automatisering · Google &amp; e-marketing · Onderhoud &amp; ondersteuning</h2>
+    <div class="diensten-rij">
+      <div class="dienst">
+        <h3>Zichtbare websites</h3>
+        <p>Een moderne, snelle website die werkt op elk toestel — en die gevonden wordt in Google. Nieuw gebouwd of uw bestaande site vernieuwd: helder, aanpasbaar en met de mogelijkheid om uw site met AI up-to-date te houden.</p>
+      </div>
+      <div class="dienst">
+        <h3>AI-automatisering</h3>
+        <p>Terugkerende taken die stilletjes uw tijd opeten: facturen verwerken, e-mails sorteren en beantwoorden, klanten opvolgen, afspraken beheren. Lotusflow automatiseert ze — waar het loont met behulp van AI — zodat u zich met uw vak kunt bezighouden.</p>
+      </div>
+      <div class="dienst">
+        <h3>Google &amp; e-marketing</h3>
+        <p>Waarom leveren de meeste websites niet op wat ze kosten? Omdat niemand ze vindt. Wij zorgen dat u wél gevonden wordt: met SEO (vindbaar in Google), GEO (vindbaar in AI-assistenten zoals ChatGPT), een correct ingericht Google Business-profiel, en e-marketing die grotendeels vanzelf loopt — nieuwsbrieven, klantopvolging en reviewverzoeken, één keer opgezet en daarna automatisch.</p>
+      </div>
+      <div class="dienst">
+        <h3>Onderhoud &amp; ondersteuning</h3>
+        <p>Uw website en e-mail hebben zorg nodig: updates, back-ups, een veilige e-mailconfiguratie en een aanspreekpunt als er iets hapert. Wij houden alles draaiend, zodat u er niet naar hoeft om te kijken.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="werkwijze">
+  <div class="sectie-inner">
+    <h2>Zo werken we</h2>
+    <p class="sectie-intro">Geen verrassingen, geen jargon. U weet op elk moment waar u staat.</p>
+    <ol class="stappen">
+      <li>
+        <span class="stap-nr">1</span>
+        <span class="stap-tekst"><strong>Kennismaking</strong><p>We luisteren naar wat u nodig hebt.</p></span>
+      </li>
+      <li>
+        <span class="stap-nr">2</span>
+        <span class="stap-tekst"><strong>Voorstel</strong><p>U krijgt een helder plan, zonder verrassingen.</p></span>
+      </li>
+      <li>
+        <span class="stap-nr">3</span>
+        <span class="stap-tekst"><strong>Uitvoering</strong><p>U volgt mee en beslist bij elke stap.</p></span>
+      </li>
+      <li>
+        <span class="stap-nr">4</span>
+        <span class="stap-tekst"><strong>Oplevering en nazorg</strong><p>We laten u niet los na de lancering.</p></span>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section id="over">
+  <div class="sectie-inner">
+    <h2>Over Lotusflow</h2>
+    <p>Lotusflow combineert jarenlange IT-ervaring bij grote bedrijven met een aanpak op maat van kleine ondernemingen: nuchter, betrouwbaar en zonder jargon. Volledig op afstand, voor klanten in België en Nederland.</p>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="sectie-inner">
+    <h2>Contact</h2>
+    <p>Vragen of een project in gedachten? Mail ons — u krijgt snel antwoord.</p>
+    <a class="mail-groot" href="mailto:info@lotusflow.net">info@lotusflow.net</a>
+  </div>
+</section>
+
+<footer>
+  <div class="voet-inner">
+    <span>Lotusflow — België &amp; Nederland</span>
+    <a href="mailto:info@lotusflow.net">info@lotusflow.net</a>
+  </div>
+</footer>
+
+</body>
+</html>
